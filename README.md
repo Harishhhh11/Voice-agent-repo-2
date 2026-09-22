@@ -1,11 +1,52 @@
-<div align="center">
+# AI Receptionist Platform
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+An enterprise-grade multi-tenant AI Receptionist Platform built using FastAPI, SQLAlchemy, Ollama, and Next.js.
 
-  <h1>Built with AI Studio</h2>
+## Vision
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+This platform enables any organization to create its own AI receptionist capable of:
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+- Website Chat
+- Voice Calls
+- WhatsApp Integration
+- Knowledge Base Search (RAG)
+- Lead Management
+- CRM Integration
+- Analytics Dashboard
 
-</div>
+## Tech Stack
+
+### Backend
+
+- Python
+- FastAPI
+- SQLAlchemy
+- Alembic
+- PostgreSQL
+- JWT Authentication
+
+### AI
+
+- Ollama
+- OpenAI (Optional)
+- Gemini (Optional)
+
+### Frontend
+
+- Next.js
+- Tailwind CSS
+- Shadcn UI
+
+## Project Status
+
+Current Version:
+
+v2.0.0
+
+Phase 11 testing and quality is implemented alongside integrations, analytics,
+and the company admin dashboard. The repository remains under active
+development.
+
+## License
+
+MIT

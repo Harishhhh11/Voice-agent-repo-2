@@ -1,0 +1,146 @@
+[
+  {
+    "id": "dict-1",
+    "word": "Maruthi Technologies",
+    "language": "all",
+    "pronunciation": "మారుతి టెక్నాలజీస్",
+    "category": "brand",
+    "notes": "Official institution name in native Telugu script",
+    "isActive": true
+  },
+  {
+    "id": "dict-2",
+    "word": "Python",
+    "language": "en",
+    "pronunciation": "పైథాన్",
+    "category": "technical",
+    "notes": "Soft Indian Telugu pronunciation with long vowel",
+    "isActive": true
+  },
+  {
+    "id": "dict-3",
+    "word": "Java",
+    "language": "en",
+    "pronunciation": "జావా",
+    "category": "technical",
+    "notes": "Standard conversational Telugu pronunciation",
+    "isActive": true
+  },
+  {
+    "id": "dict-4",
+    "word": "AI",
+    "language": "en",
+    "pronunciation": "ఏఐ",
+    "category": "technical",
+    "notes": "Artificial Intelligence acronym expansion",
+    "isActive": true
+  },
+  {
+    "id": "dict-5",
+    "word": "ML",
+    "language": "en",
+    "pronunciation": "ఎంఎల్",
+    "category": "technical",
+    "notes": "Machine Learning acronym expansion",
+    "isActive": true
+  },
+  {
+    "id": "dict-6",
+    "word": "API",
+    "language": "en",
+    "pronunciation": "ఏపీఐ",
+    "category": "technical",
+    "notes": "Application Programming Interface phonetic spelling",
+    "isActive": true
+  },
+  {
+    "id": "dict-7",
+    "word": "RAG",
+    "language": "en",
+    "pronunciation": "రాగ్",
+    "category": "technical",
+    "notes": "Retrieval Augmented Generation conversational term",
+    "isActive": true
+  },
+  {
+    "id": "dict-8",
+    "word": "WhatsApp",
+    "language": "en",
+    "pronunciation": "వాట్సాప్",
+    "category": "technical",
+    "notes": "Widely used messaging platform in AP/Telangana",
+    "isActive": true
+  },
+  {
+    "id": "dict-9",
+    "word": "Hyderabad",
+    "language": "all",
+    "pronunciation": "హైదరాబాద్",
+    "category": "location",
+    "notes": "Headquarters regional location",
+    "isActive": true
+  },
+  {
+    "id": "dict-10",
+    "word": "Ameerpet",
+    "language": "all",
+    "pronunciation": "అమీర్‌పేట",
+    "category": "location",
+    "notes": "Classroom campus center location",
+    "isActive": true
+  },
+  {
+    "id": "dict-11",
+    "word": "Online batch",
+    "language": "en",
+    "pronunciation": "ఆన్‌లైన్ బ్యాచ్",
+    "category": "technical",
+    "notes": "Virtual remote instruction batch",
+    "isActive": true
+  },
+  {
+    "id": "dict-12",
+    "word": "Classroom batch",
+    "language": "en",
+    "pronunciation": "క్లాస్‌రూమ్ బ్యాచ్",
+    "category": "technical",
+    "notes": "In-person campus instruction batch",
+    "isActive": true
+  },
+  {
+    "id": "dict-13",
+    "word": "Full Stack",
+    "language": "en",
+    "pronunciation": "ఫుల్ స్టాక్",
+    "category": "technical",
+    "notes": "End-to-end curriculum track",
+    "isActive": true
+  },
+  {
+    "id": "dict-14",
+    "word": "Placement Assistance",
+    "language": "en",
+    "pronunciation": "ప్లేస్‌మెంట్ అసిస్టెన్స్",
+    "category": "technical",
+    "notes": "Job referral and interview preparation guarantee",
+    "isActive": true
+  },
+  {
+    "id": "dict-15",
+    "word": "SQL",
+    "language": "en",
+    "pronunciation": "సీక్వెల్",
+    "category": "technical",
+    "notes": "Database query language",
+    "isActive": true
+  },
+  {
+    "id": "dict-16",
+    "word": "UI / UX",
+    "language": "en",
+    "pronunciation": "యూఐ యూఎక్స్",
+    "category": "technical",
+    "notes": "User Interface and User Experience design",
+    "isActive": true
+  }
+]

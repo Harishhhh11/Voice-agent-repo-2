@@ -1,0 +1,54 @@
+# Open-Source Telugu Voice AI Lab Container
+# Multi-stage image supporting both NVIDIA CUDA (GPU) and CPU Fallback
+
+FROM nvidia/cuda:12.2.0-runtime-ubuntu22.04 AS gpu-base
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV PYTHONUNBUFFERED=1
+ENV NODE_ENV=production
+ENV PORT=3000
+
+# Install system dependencies, Python 3.10, FFmpeg, and Node.js
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    curl \
+    git \
+    ffmpeg \
+    libsndfile1 \
+    python3 \
+    python3-pip \
+    python3-dev \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Node.js 20.x
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
+    apt-get install -y nodejs && \
+    rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# Install Python requirements for IndicF5, Indic Parler-TTS & Pocket TTS
+RUN pip3 install --no-cache-dir --upgrade pip setuptools wheel && \
+    pip3 install --no-cache-dir \
+    torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121 && \
+    pip3 install --no-cache-dir \
+    transformers \
+    accelerate \
+    soundfile \
+    scipy \
+    einops
+
+# Copy application manifest and install Node dependencies
+COPY package*.json ./
+RUN npm install --production=false
+
+# Copy full application source
+COPY . .
+
+# Build Vite client assets
+RUN npm run build
+
+EXPOSE 3000
+
+# Start server
+CMD ["node", "dist/server.cjs"]

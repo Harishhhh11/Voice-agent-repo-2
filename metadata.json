@@ -1,0 +1,10 @@
+{
+  "name": "Telugu Realtime AI Receptionist Platform",
+  "description": "Production-grade self-hosted Telugu realtime conversational voice receptionist platform with LiveKit, VAD, semantic turn detection, barge-in, Telugu-English code mixing, RAG, and telephony integration.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

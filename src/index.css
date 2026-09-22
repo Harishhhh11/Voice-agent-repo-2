@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+/* 
+  Global Input Typography:
+  Ensure text in input boxes is white and clearly visible across the dark platform theme.
+*/
+input,
+textarea,
+select {
+  color: #ffffff !important;
+  caret-color: #ffffff !important;
+}
+
+/* Clear, legible placeholder styles across dark inputs */
+input::placeholder,
+textarea::placeholder {
+  color: #94a3b8 !important;
+  opacity: 1;
+}
+
+/* 
+  Consistent dark styling for common inputs
+*/
+.input {
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid #334155;
+  background-color: #0f172a;
+  padding: 0.625rem 0.875rem;
+  font-size: 0.875rem;
+  color: #ffffff !important;
+  caret-color: #ffffff !important;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 1px #6366f1;
+}
+
+/* 
+  AI Receptionist Chat Section:
+  Make text colour black ONLY in the AI receptionist chat section.
+*/
+.ai-receptionist-chat input,
+.ai-receptionist-chat textarea,
+.ai-receptionist-chat select,
+.ai-chat-input,
+#ai-chat-input,
+[data-section="ai-receptionist-chat"] input,
+[data-section="ai-receptionist-chat"] textarea {
+  color: #0f172a !important;
+  caret-color: #0f172a !important;
+}
+
+.ai-receptionist-chat input::placeholder,
+.ai-receptionist-chat textarea::placeholder,
+.ai-chat-input::placeholder,
+#ai-chat-input::placeholder {
+  color: #94a3b8 !important;
+}
+

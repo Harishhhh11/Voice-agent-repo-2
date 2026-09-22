@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  open-source-voice-engine:
+    build:
+      context: .
+      dockerfile: Dockerfile.open-source-tts
+    container_name: open-source-voice-lab
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - NODE_ENV=production
+      - OFFLINE_MODE=true
+      - CUDA_VISIBLE_DEVICES=0
+    volumes:
+      - ./data/open-source-tts-cache:/app/data/open-source-tts-cache
+      - ./pronunciation_dictionary.json:/app/pronunciation_dictionary.json
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/v1/voice/open-source/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s

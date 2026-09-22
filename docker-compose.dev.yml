@@ -1,0 +1,19 @@
+version: '3.8'
+
+# Lightweight development profile with minimal RAM footprint for local testing
+services:
+  dev-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: npm run dev
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - PORT=3000
+      - LLM_PROVIDER=local-qwen
+      - LIVEKIT_URL=ws://localhost:7880
+    volumes:
+      - .:/app
+      - /app/node_modules

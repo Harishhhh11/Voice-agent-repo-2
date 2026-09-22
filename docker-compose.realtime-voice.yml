@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  # 1. Main Platform Server (Node.js + React + Express)
+  receptionist-app:
+    build: .
+    container_name: telugu-ai-receptionist-app
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - LLM_PROVIDER=ollama
+      - OLLAMA_HOST=http://ollama-llm:11434
+      - LIVEKIT_URL=ws://livekit-server:7880
+      - LIVEKIT_API_KEY=APIDevKey123
+      - LIVEKIT_API_SECRET=secretLiveKitSecretTeluguAIReceptionistPlatform2026
+    depends_on:
+      - livekit-server
+      - ollama-llm
+      - open-source-voice-engine
+
+  # 2. Self-Hosted LiveKit Realtime Audio Server
+  livekit-server:
+    image: livekit/livekit-server:latest
+    container_name: livekit-realtime-voice
+    restart: unless-stopped
+    command: --config /etc/livekit.yaml
+    volumes:
+      - ./telephony/livekit.yaml:/etc/livekit.yaml:ro
+    ports:
+      - "7880:7880"
+      - "7881:7881"
+      - "50000-50050:50000-50050/udp"
+
+  # 3. Local Ollama LLM for Conversational Reasoning
+  ollama-llm:
+    image: ollama/ollama:latest
+    container_name: ollama-telugu-llm
+    restart: unless-stopped
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+
+  # 4. Open-Source Telugu TTS Engine (Indic-Parler / VEXYL-TTS / IndicF5)
+  open-source-voice-engine:
+    build:
+      context: .
+      dockerfile: Dockerfile.open-source-tts
+    container_name: telugu-voice-tts-worker
+    restart: unless-stopped
+    ports:
+      - "8008:8008"
+    environment:
+      - TTS_MODEL=indic-parler-telugu
+      - DEVICE=cpu
+      - WORKERS=2
+
+volumes:
+  ollama_data:

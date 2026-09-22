@@ -1,0 +1,30 @@
+port: 7880
+bind_addresses:
+  - ""
+rtc:
+  tcp_port: 7881
+  port_range_start: 50000
+  port_range_end: 50200
+  use_external_ip: false
+
+audio:
+  sample_rate: 24000
+  channels: 1
+
+sip:
+  listen_addresses:
+    - "0.0.0.0:5060"
+  rtp_port_range_start: 10000
+  rtp_port_range_end: 10500
+
+keys:
+  APIDevKey123: secretLiveKitSecretTeluguAIReceptionistPlatform2026
+
+webhook:
+  api_key: APIDevKey123
+  urls:
+    - "http://localhost:3000/api/v1/voice-agents/telephony/sip-webhook"
+
+logging:
+  json: false
+  level: info
